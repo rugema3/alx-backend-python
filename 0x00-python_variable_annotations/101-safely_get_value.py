@@ -2,14 +2,14 @@
 """101-safely_get_value module."""
 from typing import Mapping, Any, Union, TypeVar, Optional
 
-U = TypeVar('U')  # Using a different name for the TypeVar
+T = TypeVar('T')
 
 
 def safely_get_value(
     dct: Mapping,
     key: Any,
-    default: Optional[U] = None
-) -> Union[Any, U]:
+    default: Optional[T] = None
+) -> Union[Any, T]:
     """Safely get a value from a dictionary.
 
     Args:
@@ -19,7 +19,7 @@ def safely_get_value(
                                 not present (default is None).
 
     Returns:
-        Union[Any, U]: The value associated with the key in the dictionary,
+        Union[Any, T]: The value associated with the key in the dictionary,
         or the default value if the key is not present.
     """
     if key in dct:
