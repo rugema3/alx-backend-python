@@ -1,5 +1,5 @@
 <h1>0x00. Python - Variable Annotations</h1>
-
+<img src='img/annotations.png'>
 <h1>Resources</h1>
 <li><a href="https://intranet.alxswe.com/concepts/554">Advanced Python</a></li>
 <li><a href="https://intranet.alxswe.com/rltoken/5j0OtdWh36_HVAHKJX2gaA">Python 3 typing documentation</a></li>
