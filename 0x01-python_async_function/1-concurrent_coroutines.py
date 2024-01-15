@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Module providing an asynchronous coroutine for concurrent waiting
-with random delays.
-"""
+"""Module providing asynchronous coroutine 4 concurrent waiting."""
 import asyncio
 from typing import List
 
