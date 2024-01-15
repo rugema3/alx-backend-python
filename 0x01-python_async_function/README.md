@@ -1,9 +1,9 @@
 <h1>0x01. Python - Async</h1>
-<img src="/img/async.png">
+<img src='img/async.png'>
 <h1>Resources</h1>
 
 
-<li><a hfer="https://intranet.alxswe.com/rltoken/zYkXScziW1D5rNdNEvObjQ">Async IO in Python: A Complete Walkthrough</a></li>
+<li><a href="https://intranet.alxswe.com/rltoken/zYkXScziW1D5rNdNEvObjQ">Async IO in Python: A Complete Walkthrough</a></li>
 <li><a href="https://intranet.alxswe.com/rltoken/aZUO4GiWHbPIrVBIwptFAw">asyncio - Asynchronous I/O</a></li>
 <li><a href="https://intranet.alxswe.com/rltoken/72mVf1s8rx2ih_U2WjBmaA">random.uniform</a></li>
 
