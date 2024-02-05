@@ -64,13 +64,20 @@ class TestGetJson(unittest.TestCase):
     def test_get_json(self, test_url, test_payload, mock_requests_get):
         """
         Test the get_json method to ensure it returns the expected output.
+
         Args:
-            url: url to send http request to
-            payload: expected json response
+            test_url (str): The URL to send an HTTP request to.
+            test_payload (Mapping): The expected JSON response.
+
+        Returns:
+            None
         """
+        # Mock the response from requests.get
         mock_requests_get.return_value.json.return_value = test_payload
-        result = get_json(test_url)
-        self.assertEqual(result, test_payload)
+        response_data = get_json(test_url)
+
+        # Assertions
+        self.assertEqual(response_data, test_payload)
         mock_requests_get.assert_called_once_with(test_url)
 
 
