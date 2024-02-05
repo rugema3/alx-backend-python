@@ -59,27 +59,27 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False}),
     ])
-    @patch('utils.requests.get')
+    @patch("requests.get")
     def test_get_json(self, test_url: str, test_payload: Mapping,
-                      mock_get: Mock) -> None:
-        """Test get_json function with different inputs.
+                      mock_requests_get: Mock) -> None:
+        """Test the get_json method to ensure it returns the expected output.
 
-        Parameters:
-            test_url (str): The test URL.
-            test_payload (Mapping): The test payload.
+        Args:
+            test_url (str): The URL to send an HTTP request to.
+            test_payload (Mapping): The expected JSON response.
 
         Returns:
             None
         """
-        mock_get.return_value = Mock()
-        mock_get.return_value.json.return_value = test_payload
+        # Mock the response from requests.get
+        mock_requests_get.return_value.json.return_value = test_payload
 
-        # Call the function
+        # Call the function under test
         result = get_json(test_url)
 
         # Assertions
-        mock_get.assert_called_once_with(test_url)
         self.assertEqual(result, test_payload)
+        mock_requests_get.assert_called_once_with(test_url)
 
 
 if __name__ == '__main__':
