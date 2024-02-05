@@ -3,10 +3,11 @@
 Test access_nested_map function.
 """
 import unittest
-from parameterized import parameterized
+import requests
+from unittest.mock import patch
 from typing import Mapping, Sequence, Any
-
-from utils import access_nested_map
+from parameterized import parameterized
+from utils import access_nested_map, get_json, memoize
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -32,8 +33,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
-        ({}, ("a",), "Key 'a' not found in nested map"),
-        ({"a": 1}, ("a", "b"), "Key 'b' not found in nested map['a']"),
+        ({}, ("a",)),
+        ({"a": 1}, ("a", "b"))
     ])
     def test_access_nested_map_exception(self, nested_map: Mapping,
                                          path: Sequence) -> None:
